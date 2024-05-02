@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analysis Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+        }
+        a {
+            display: inline-block;
+            background-color: #007BFF;
+            color: #ffffff;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>Analysis Results</h2>
+    <p>Percent Matched: {{ matches }}%</p>
+    <p>Cohen's Kappa Score: {{ kappa_score }}</p>
+    <!-- Add the download link here -->
+    <a href="/download-results">Download experiment results in Excel</a>
+    <!-- <a href="/download-results">Download experiment results in CSV</a> -->
+
+    <!-- Name the results file -->
+    <!-- <form action="/custom-download" method="post">
+        <input type="text" name="custom_filename" placeholder="Enter desired filename" required>
+        <input type="submit" value="Download Results with Custom Filename">
+    </form> -->
+
+    <h2>Prompts</h2>
+    <p><strong>Original Prompt:</strong> {{ original_prompt }}</p>
+    <p><strong>Revised Prompt:</strong> {{ revised_prompt }}</p>
+    <p><strong>Changes - Reasons:</strong> {{ changes_reason }}</p>
+    <h2>Changes Highlighted</h2>
+    <div style="background-color: #fff; padding: 10px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 10px; white-space: pre-wrap; font-family: monospace;">
+        {{ changes_display|safe }}
+    </div>
+
+    <!-- Try another file or go back to edit -->
+    <a href="/" style="background-color: #4CAF50; color: white; padding: 10px 15px; border: none; border-radius: 5px; text-decoration: none;">Try another file</a>
+    <!-- <a href="/" style="background-color: #FF69B4; color: white; padding: 10px 15px; border: none; border-radius: 5px; text-decoration: none;">Go Back</a>
+    <button onclick="history.back()">Go Back</button> -->
+
+    <!-- Styled Link -->
+    <a id="goBackButton" style="background-color: #FF69B4; color: white; padding: 10px 15px; border: none; border-radius: 5px; text-decoration: none; cursor: pointer;">Go Back</a>
+
+    <!-- JavaScript to Handle Click -->
+    <script>
+        document.getElementById('goBackButton').addEventListener('click', function() {
+            window.history.back();
+        });
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Evaluate prompts and compute metrics</title>
+    <style>
+        .header {
+            display: flex;
+            align-items: right
+            gap: 0px; /* Adjust this value to control space between flex items */
+            }
+            .header-image {
+            width: 60px; /* Makes the image smaller. Adjust as needed. */
+            height: auto; /* Maintains the aspect ratio of the image */
+            margin-right: 10px; /* Space between the image and the title */
+            margin-left: 20px;
+            margin-bottom: 20px;
+            }
+            h1 {
+            color: #3287a8;
+            margin: 10px; /* Removes default margin */
+            font-size: 24px; /* Adjust the size as needed */
+            /* Additional styling for the title */
+        }
+  </style>
+</head>
+<body>
+  <div class="header">
+      <img src="{{ url_for('static', filename='prompts_fine_tuning.png') }}" alt="Prompts Fine-tuning and Evaluations" class="header-image">
+      <!-- Page Title -->
+      <h1 style="color: #3287a8;">Prompts Fine-tuning and Evaluations</h1>
+  </div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input[type=text], input[type=file], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; /* Ensures padding does not affect overall width */
+        }
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+        label {
+            font-weight: bold;
+        }
+    </style>
+<!-- </head> -->
+<!-- <body> -->
+      <!-- Page Title -->
+    <!-- <h1 style="color: #3287a8;">Prompts Fine-tuning and Evaluations</h1> -->
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="original_prompt">Original Prompt</label>
+        <textarea id="original_prompt" name="original_prompt" placeholder="Enter original prompt here" required></textarea>
+
+        <label for="revised_prompt">Revised Prompt</label>
+        <textarea id="revised_prompt" name="revised_prompt" placeholder="Enter revised prompt here" required></textarea>
+
+        <label for="changes_reason" class="changes-made-label">Changes - Reasons</label>
+        <textarea id="changes_reason" name="changes_reason" placeholder="Enter changes here" class="changes-made-input" required></textarea>
+
+        <label for="file">Upload CSV File</label>
+        <input type="file" id="file" name="file" required
+
+      <div class="row">
+          <div class="column">
+            <label for="ground_truth_column" class="column-name-label">Ground Truth Column Name</label>
+            <input type="text" id="ground_truth_column" name="ground_truth_column" required>
+              <!-- <label for="ground_truth_column">Ground Truth Column Name:</label>
+              <input type="text" id="ground_truth_column" name="ground_truth_column" placeholder="Ground Truth Column Name" required> -->
+          </div>
+          <div class="column">
+            <label for="inference_column" class="column-name-label">Inference Column Name</label>
+            <input type="text" id="inference_column" name="inference_column" required>
+              <!-- <label for="inference_column">Inference Column Name:</label>
+              <input type="text" id="inference_column" name="inference_column" placeholder="Inference Column Name" required> -->
+          </div>
+      </div>
+
+          <!-- Rest of your form elements -->
+          <input type="submit" value="Analyze", style="font-size: 20px;">
+    </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Function to adjust textarea height
+            function autoGrow(oField) {
+                if (oField.scrollHeight > oField.clientHeight) {
+                    oField.style.height = oField.scrollHeight + "px";
+                }
+            }
+
+            // Apply autoGrow function on input for each textarea
+            document.getElementById("original_prompt").addEventListener("input", function() {
+                autoGrow(this);
+            });
+
+            document.getElementById("revised_prompt").addEventListener("input", function() {
+                autoGrow(this);
+            });
+
+            document.getElementById("changes_reason").addEventListener("input", function() {
+                autoGrow(this);
+            });
+        });
+    </script>
+
+    <style>
+
+        label {
+            font-size: 16px; /* Adjusts the font size to 14px. You can change this value as needed. */
+        }
+        /* If you have specific classes for your labels, you can target them directly for more precise control */
+
+        .changes-made-label {
+            color: #a84232; /* Sets the text color of the label */
+        }
+
+        .changes-made-input {
+            background-color: #f0f4f7; /* Sets the background color of the textarea */
+            color: #333; /* Sets the text color inside the textarea */
+            border: 1px solid #ccd; /* Optional: adds a border to the textarea */
+            padding: 8px; /* Optional: adds some padding inside the textarea */
+        }
+
+        .column-label {
+            font-size: 14px; /* Example for a specific class. Adjust the class name and size as necessary. */
+        }
+
+        .row {
+            display: flex;
+            align-items: center; /* Ensures vertical alignment in the center */
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column; /* Stacks label and input vertically */
+            margin-right: 10px; /* Adjust the space between the columns */
+        }
+
+        input[type="text"] {
+            margin-top: 4px; /* Adds a small space between the label and the input */
+            width: 180px; /* Specifies a fixed width for the inputs to make them closer */
+        }
+
+        /* Optional: Adjust the last column's margin if needed */
+        .column:last-child {
+            margin-right: 0;
+        }
+      </style>
+
+    <!-- </form> -->
+</body>
+</html>
