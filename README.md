@@ -45,7 +45,7 @@ Once the application is running, navigate to `http://127.0.0.1:5000/` in your we
 - After uploading the data, the application will display the calculated metrics on the results page.
 - You can view details about the prompts used and any changes made.
 - Use the provided link to download a CSV file of your results.
-- You can return to the home page to try another file by clicking the "Go Back" button.
+- You can return to the home page to try another file by clicking the "Try Another File" button or to edit the previously entered information by clicking the "Go Back"  "Go Back" button.
 
 ## Configuration
 
