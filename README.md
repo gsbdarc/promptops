@@ -1,6 +1,6 @@
 # Prompts and Experiment Results Analysis App
 
-This Flask application provides a web interface for entering prompts, uploading coded datasets, calculating metrics such as percentage of matches and Cohen's Kappa score, and downloading results as a CSV file. It's designed to facilitate the analysis of experimental data comparing ground truth with inference data by tracking metadata for prompt engineering, including different versions of prompts, changes, and evaluation metrics. This will be used for the DEI summer undergraduate internship.
+This Flask application provides a web interface for entering prompts, uploading coded datasets, calculating metrics such as percentage of matches and Cohen's Kappa score, and downloading results as a CSV file. It is designed to facilitate the analysis of a series of experiments by comparing ground truth with inference data, while also tracking metadata for prompt engineering. This includes various versions of prompts, changes, and evaluation metrics. It will be used for the DEI summer undergraduate internship.
 
 ## Features
 
