@@ -3,8 +3,9 @@ import os
 import html
 import pandas as pd
 from sklearn.metrics import cohen_kappa_score
-
 from difflib import ndiff
+from dotenv import load_dotenv
+load_dotenv()
 
 # Create a Flask instance
 app = Flask(__name__)
