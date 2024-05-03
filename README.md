@@ -57,5 +57,5 @@ The application is set up with Flask's debug mode enabled to assist with develop
 
 ## Contributing
 
-Contributions to this project are welcome. Please fork the repository and submit pull requests with any enhancements or bug fixes.
-This is a testing ground for custom prompt ops
+Contributions to this project are welcome! Please fork the repository and submit pull requests with any enhancements or bug fixes.
+This is a playground for simple custom prompt ops.
