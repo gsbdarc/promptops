@@ -38,7 +38,7 @@ Before you can run this application, you need to have Python installed on your m
        source venv/bin/activate
        ```
 4. Install required Python libraries by running:
-   ```
+   ```bash
    pip install -r requirements.txt
 
 ## Usage
