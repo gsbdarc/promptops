@@ -41,6 +41,20 @@ Before you can run this application, you need to have Python installed on your m
    ```bash
    pip install -r requirements.txt
 
+5. Create an environment file `.env` in the top directory of the project with your secret key:
+   - Generate a secure secret key using Python or choose your own key:
+     ```
+     python
+     import os
+     print(os.urandom(24).hex())
+     ```
+   - Open the newly created `.env` file and add the following line:
+     ```
+     SECRET_KEY=your_generated_secret_key
+     ```
+   - Replace `your_generated_secret_key` with the key you generated. Ensure this key remains confidential and is not shared publicly. the key is needed for handling sessions in the app.
+
+
 ## Usage
 
 To start the application:
