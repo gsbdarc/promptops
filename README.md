@@ -26,16 +26,16 @@ Before you can run this application, you need to have Python installed on your m
      ```
    - Create a virtual environment in your project folder:
      ```bash
-     virtualenv venv
+     python -m venv prompt_env
      ```
    - Activate the virtual environment:
      - On Windows:
        ```bash
-       .\venv\Scripts\activate
+       prompt_env\Scripts\activate
        ```
      - On macOS and Linux:
        ```bash
-       source venv/bin/activate
+       source prompt_env/bin/activate
        ```
 4. Install required Python libraries by running:
    ```bash
@@ -44,7 +44,6 @@ Before you can run this application, you need to have Python installed on your m
 5. Create an environment file `.env` in the top directory of the project with your secret key:
    - Generate a secure secret key using Python or choose your own key:
      ```
-     python
      import os
      print(os.urandom(24).hex())
      ```
@@ -52,7 +51,7 @@ Before you can run this application, you need to have Python installed on your m
      ```
      SECRET_KEY=your_generated_secret_key
      ```
-   - Replace `your_generated_secret_key` with the key you generated. Ensure this key remains confidential and is not shared publicly. the key is needed for handling sessions in the app.
+   - Replace `your_generated_secret_key` with the key you generated. Ensure this key remains confidential and is not shared publicly. The secret key is needed for handling sessions in the app.
 
 
 ## Usage
