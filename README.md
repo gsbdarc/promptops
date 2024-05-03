@@ -13,13 +13,13 @@ This Flask application provides a web interface for entering prompts, uploading 
 
 ## Prerequisites
 
-Before you can run this application, you need to have Python installed on your machine along with Flask and its dependencies. You will also need `pandas` and `sklearn` for data manipulation and metrics calculation.
+Before you can run this application, you need to have Python installed on your machine along with `Flask` and its dependencies. You will also need `pandas` and `sklearn` for data manipulation and metrics calculation.
 
 ## Installation
 
 1. Clone the repository or download the source code.
 2. Navigate to the application directory.
-3. Set up a virtual nvironment (optional but recommended):**
+3. Set up a virtual nvironment (optional but recommended):
    - Install virtualenv if you haven't installed it yet:
      ```bash
      pip install virtualenv
@@ -37,10 +37,9 @@ Before you can run this application, you need to have Python installed on your m
        ```bash
        source venv/bin/activate
        ```
-4. Install required Python libraries by running:**
+4. Install required Python libraries by running:
    ```
    pip install -r requirements.txt
-
 
 ## Usage
 
