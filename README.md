@@ -18,11 +18,29 @@ Before you can run this application, you need to have Python installed on your m
 ## Installation
 
 1. Clone the repository or download the source code.
-2. Install required Python libraries:
-   ```bash
-   pip install Flask pandas scikit-learn
+2. Navigate to the application directory.
+3. Set up a virtual nvironment (optional but recommended):**
+   - Install virtualenv if you haven't installed it yet:
+     ```bash
+     pip install virtualenv
+     ```
+   - Create a virtual environment in your project folder:
+     ```bash
+     virtualenv venv
+     ```
+   - Activate the virtual environment:
+     - On Windows:
+       ```bash
+       .\venv\Scripts\activate
+       ```
+     - On macOS and Linux:
+       ```bash
+       source venv/bin/activate
+       ```
+4. Install required Python libraries by running:**
    ```
-3. Navigate to the application directory.
+   pip install -r requirements.txt
+
 
 ## Usage
 
