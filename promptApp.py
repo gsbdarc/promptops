@@ -98,8 +98,12 @@ def upload_file():
         ground_truth = df[ground_truth_column]
         inference = df[inference_column].astype('str')
 
+        # Ensure both ground_truth and inference are of the same type (convert to strings)
+        ground_truth_str = [str(item) for item in ground_truth]
+        inference_str = [str(item) for item in inference]
+        
         # Calculate metrics
-        percent_matched = (ground_truth == inference).mean() * 100
+        percent_matched = (pd.Series(ground_truth_str) == pd.Series(inference_str)).mean() * 100
         percent_matched_rounded = round(percent_matched, 1)
         kappa_score = cohen_kappa_score(ground_truth, inference)
         kappa_score_rounded = round(kappa_score, 1)
