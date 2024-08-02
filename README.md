@@ -5,11 +5,11 @@ This Flask application provides a web interface for entering prompts, uploading 
 ## Example Usage
 
 <div align="center">
-  <h3>Input</h3>
-  <img src="static/prompts_interface1.png" alt="PromptsOp Interface" width="400"/>
+  <h3>Input</h4>
+  <img src="static/prompts_interface1.png" alt="PromptsOp Interface" width="600"/>
   <br>
-  <h3>Output</h3>
-  <img src="static/prompts_interface2.png" alt="PromptsOp Interface" width="400"/>
+  <h3>Output</h4>
+  <img src="static/prompts_interface2.png" alt="PromptsOp Interface" width="600"/>
 </div>
 
 ## Features
