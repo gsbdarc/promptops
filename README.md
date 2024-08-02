@@ -2,7 +2,7 @@
 
 This Flask application provides a web interface for entering prompts, uploading coded datasets, calculating metrics such as percentage of matches and Cohen's Kappa score, and downloading results as a CSV file. It is designed to facilitate the analysis of a series of experiments by comparing ground truth with inference data, while also tracking metadata for prompt engineering. This includes various versions of prompts, changes, and evaluation metrics. It will be used for the DEI summer undergraduate internship.
 
-<div style="display: flex; justify-content: center;">
+<div align= "center">
 <img src="static/prompts_interface.png" alt="PromptsOp Interface" width="600"/>
 </div>
 
